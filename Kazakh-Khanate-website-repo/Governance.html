@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Governance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .info-card {
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: #004e89;
+      color: #D4A373;
+    }
+
+    .infographic img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .diagram {
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Kazakh Khanate</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/Kazakh-Khanate-website-repo/index.html">Home</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#infographic">Infographic</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#accordion">Elements of control</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#diagram">Diagram</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-light py-5">
+    <div class="container text-center">
+      <h1 class="display-4">System control of Kazakh Khanate </h1>
+      <p class="lead">Explore the unique management structure and key features.</p>
+    </div>
+  </header>
+
+  <!-- Infographic Section -->
+  <section id="infographic" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center mb-4">Management Infographics</h2>
+      <div class="infographic">
+        <img src="/assets/3_47.jpg" alt="Инфографика Казахского ханства">
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordion Section -->
+  <section id="accordion" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Management of Elements</h2>
+      <div class="accordion" id="managementAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                Khan - Supreme Ruler
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#managementAccordion">
+            <div class="accordion-body">
+                The Khan was the supreme ruler and wielded supreme power, representing the interests of all the tribes that were part of the Khanate.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                Bii - Advisors and Judges
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#managementAccordion">
+            <div class="accordion-body">
+                The Biys served as advisers, judges and mediators in conflicts between different tribes.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                Elders - Tribal leaders
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#managementAccordion">
+            <div class="accordion-body">
+                Elders governed their tribes, ensuring that laws and traditions were followed.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diagram Section -->
+  <section id="diagram" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center mb-4">Management structure</h2>
+      <div class="diagram p-4 bg-light">
+        <canvas id="managementChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-3">
+    <div class="container text-center">
+      <p>&copy; 2024 Kazakh Khanate.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Chart.js diagram
+    const ctx = document.getElementById('managementChart').getContext('2d');
+    const managementChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Хан', 'Бии', 'Старейшины', 'Военачальники'],
+        datasets: [{
+          data: [40, 30, 20, 10],
+          backgroundColor: ['#0d6efd', '#198754', '#ffc107', '#dc3545'],
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
